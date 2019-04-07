@@ -12,10 +12,12 @@ class WpTwig
 
 	private function __construct()
 	{
-		add_action('init', array($this, 'setupTwigEnvironment'), 0, 0);
-		add_action('template_redirect', array($this, 'setGlobalVariables'), 9999);
+		if(!is_admin() || defined( 'DOING_AJAX' ) && DOING_AJAX){
+			add_action('init', array($this, 'setupTwigEnvironment'), 0, 0);
+			add_action('template_redirect', array($this, 'setGlobalVariables'), 9999);
+		}
 	}
-
+	
 	public static function getInstance()
 	{
 		if (null === self::$instance) {
