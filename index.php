@@ -7,4 +7,4 @@ $data = array(
     'content' => apply_filters('the_content', get_the_content())
 );
 
-twig_render('pages/static.twig', $data);
+twig_render('pages/index.twig', $data);

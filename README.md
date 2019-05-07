@@ -16,3 +16,6 @@
  * Intl
 * hide default dashboard widgets
 * piklist checker
+* validator
+* some improvements
+* twig from composer

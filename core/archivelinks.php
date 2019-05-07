@@ -157,8 +157,8 @@ class PostTypeArchiveLinks
         // 'Add to Menu' button
         $html .= '<p class="button-controls"><span class="add-to-menu">';
         $html .= '<input type="submit"' . disabled($nav_menu_selected_id, 0, false) . ' class="button-secondary
-			  submit-add-to-menu right" value="' . esc_attr__('Add to Menu', 'default') . '"
-			  name="add-post-type-menu-item" id="submit-post-type-archives" />';
+              submit-add-to-menu right" value="' . esc_attr__('Add to Menu', 'default') . '"
+              name="add-post-type-menu-item" id="submit-post-type-archives" />';
         $html .= '<span class="spinner"></span>';
         $html .= '</span></p>';
 
@@ -184,9 +184,9 @@ class PostTypeArchiveLinks
 
             $menuItemData = array(
                 'menu-item-title' => esc_attr($postTypeObj->labels->name),
-				'menu-item-type' => 'post_type_archive',
-				'menu-item-object' => esc_attr($postType),
-				'menu-item-url' => get_post_type_archive_link($postType)
+                'menu-item-type' => 'post_type_archive',
+                'menu-item-object' => esc_attr($postType),
+                'menu-item-url' => get_post_type_archive_link($postType)
             );
 
             // Collect the items' IDs.

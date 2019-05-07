@@ -33,9 +33,9 @@ Class Optimize
         add_action('wp_handle_upload_prefilter', array( $this, 'uploadFilter') );
 
         if ( isset($_GET['debug']) && $_GET['debug'] == 1 ) {
-			show_admin_bar( true );
-		} else {
-			show_admin_bar( false );
+            show_admin_bar( true );
+        } else {
+            show_admin_bar( false );
         }
         
         if($this->themeOptions['disableXMLRPC']){
@@ -62,7 +62,6 @@ Class Optimize
         if($this->themeOptions['hidePosts']){
             $this->hidePosts();
         }
-
 
         $this->handleAdminAssets();
     }
@@ -113,11 +112,11 @@ Class Optimize
     
     public function uploadFilter( $file )
     {
-		$path = pathinfo($file['name']);
-		$new_filename = preg_replace('/.' . $path['extension'] . '$/', '', $file['name']);
-		$file['name'] = sanitize_title($new_filename) . '.' . strtolower($path['extension']);
+        $path = pathinfo($file['name']);
+        $new_filename = preg_replace('/.' . $path['extension'] . '$/', '', $file['name']);
+        $file['name'] = sanitize_title($new_filename) . '.' . strtolower($path['extension']);
 
-		return $file;
+        return $file;
     }
 
     private function disableXMLRPC()

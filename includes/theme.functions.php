@@ -4,7 +4,7 @@ Class ThemeFunctions extends Singleton
 {
     public function __construct()
     {
-		// FOO
+        // FOO
     }
 
     public static function getTitle( $default = null )
@@ -13,10 +13,10 @@ Class ThemeFunctions extends Singleton
         
         if(is_archive() && !is_admin()){
             $objType = get_queried_object()->name;
-			$cptObj = get_post_type_object( $objType );
-			$title = $cptObj->label;
+            $cptObj = get_post_type_object( $objType );
+            $title = $cptObj->label;
         }
-		
+        
         return $title;
     }
 }
