@@ -2,11 +2,26 @@
 
 Class PiklistMods extends Singleton 
 {
+
+    private $isPiklistActive = false;
+
     public function __construct()
     {
-        //TODO: piklist checker
-        add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);
-        add_filter('piklist_part_process_callback', array($this, 'showOnlyFrontpage'), 10, 2);
+        global $themeOptions;
+        if($themeOptions['usePiklist'] != true) return false;
+
+        $this->piklistCheck();
+
+            
+            add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);
+            add_filter('piklist_part_process_callback', array($this, 'showOnlyFrontpage'), 10, 2);
+    }
+
+    public function piklistCheck()
+    {
+        if(is_admin()){
+            //$this->isPiklistActive =  is_plugin_active('piklist');
+        }
     }
     
     public function customCommentBlock( $data, $folder )

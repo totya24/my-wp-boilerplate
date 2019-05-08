@@ -11,6 +11,7 @@ define('THEME_TEXTDOMAIN', $currentTheme->get('TextDomain'));
 
 $themeOptions = array(
     'textdomain' => THEME_TEXTDOMAIN,
+    'usePiklist' => true,
     'twig' => array(
         'debug' => false,
         'paths' => array(
