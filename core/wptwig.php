@@ -61,7 +61,7 @@ class WpTwig
         
         foreach(self::$globalVariables as $name => $value) {
             self::$twigEnvironment->addGlobal($name, $value);
-        }	
+        }
     }
     
     public function renderTemplate($template, $values)

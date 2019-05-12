@@ -10,18 +10,27 @@ Class PiklistMods extends Singleton
         global $themeOptions;
         if($themeOptions['usePiklist'] != true) return false;
 
-        $this->piklistCheck();
+        add_action('admin_init', array($this, 'piklistCheck'));
 
-            
-            add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);
-            add_filter('piklist_part_process_callback', array($this, 'showOnlyFrontpage'), 10, 2);
+        if(!$this->isPiklistActive){
+            add_action('admin_notices', array($this, 'showAdminWarning'));
+        }
+
+        add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);
+        add_filter('piklist_part_process_callback', array($this, 'showOnlyFrontpage'), 10, 2);
     }
 
     public function piklistCheck()
     {
         if(is_admin()){
-            //$this->isPiklistActive =  is_plugin_active('piklist');
+            $this->isPiklistActive = is_plugin_active('piklist');
         }
+    }
+
+    function showAdminWarning()
+    {
+        $message = __('A sablon megfelelő működéséhez szükség van a <a href="https://piklist.com/" target="_blank">Piklist</a> bővítményre!', THEME_SLUG);
+        printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message ); 
     }
     
     public function customCommentBlock( $data, $folder )
