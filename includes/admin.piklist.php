@@ -12,10 +12,6 @@ Class PiklistMods extends Singleton
 
         add_action('admin_init', array($this, 'piklistCheck'));
 
-        if(!$this->isPiklistActive){
-            add_action('admin_notices', array($this, 'showAdminWarning'));
-        }
-
         add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);
         add_filter('piklist_part_process_callback', array($this, 'showOnlyFrontpage'), 10, 2);
     }
@@ -23,7 +19,11 @@ Class PiklistMods extends Singleton
     public function piklistCheck()
     {
         if(is_admin()){
-            $this->isPiklistActive = is_plugin_active('piklist');
+            $this->isPiklistActive = is_plugin_active('piklist/piklist.php');
+
+            if(!$this->isPiklistActive){
+                add_action('admin_notices', array($this, 'showAdminWarning'));
+            }
         }
     }
 
