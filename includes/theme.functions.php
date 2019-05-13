@@ -19,6 +19,13 @@ Class ThemeFunctions extends Singleton
         
         return $title;
     }
+
+    public static function sendMail($to, $subject, $content = '', $template = 'general'){
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $message = twig_render('mail/'.$template.'.twig', false);
+        $result = wp_mail($to, $subject, $message, $headers);
+        return $result;
+    }
 }
 
 ThemeFunctions::getInstance();
