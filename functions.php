@@ -23,19 +23,18 @@ $themeOptions = array(
         'js' => false,
         'editorStyle' => false
     ),
-    'disableXMLRPC' => true, 
-    'disableEmojis' => true, 
     'disableJquery' => true,
     'addScriptJs' => true,
-    'disableComments' => true,
-    'disableFeeds' => true,
-    'disableRestApi' => true,
-    'disableEmbed' => true,
-    'slowHeartBeat' => true,
-    'hidePosts' => false
 );
 
 require_once('core/core.php');
+
+$tweaks = glob(get_template_directory()."/tweaks/*.php");
+if(is_array($tweaks)){
+    foreach($tweaks as $tweak){
+        require_once($tweak);
+    }
+}
 
 $includes = glob(get_template_directory()."/includes/*.php");
 if(is_array($includes)){
