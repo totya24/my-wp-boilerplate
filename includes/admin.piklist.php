@@ -10,6 +10,9 @@ Class PiklistMods extends Singleton
         global $themeOptions;
         if($themeOptions['usePiklist'] != true) return false;
 
+        remove_action( 'wp_footer', array( 'piklist_theme', 'piklist_love' ), 1000 );
+        remove_action('wp_head', array('piklist_theme', 'version_in_header'));
+
         add_action('admin_init', array($this, 'piklistCheck'));
 
         add_filter('piklist_part_data', array($this, 'customCommentBlock'), 10, 2);

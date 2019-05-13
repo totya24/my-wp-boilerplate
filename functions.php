@@ -19,7 +19,7 @@ $themeOptions = array(
         )
     ),
     'adminAssets' => array(
-        'css' => false,
+        'css' => get_template_directory_uri() . '/assets/css/admin.css',
         'js' => false,
         'editorStyle' => false
     ),

@@ -38,6 +38,9 @@ class WpTwig
         }
         
         self::$twigEnvironment = new Twig_Environment(self::$twigLoader, self::$twigEnvironmentSettings);
+
+        self::$twigEnvironment->addExtension(new \nochso\HtmlCompressTwig\Extension());
+
     }
     
     private function setupTwigEnvironmentOptions()

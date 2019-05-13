@@ -39,7 +39,7 @@ Class Optimize
 
     public function handleAdminAssets()
     {
-        if($this->themeOptions['adminAssets']['editorStyle']){
+        if($this->themeOptions['adminAssets']['editorStyle']) {
             $editorStyle = $this->themeOptions['adminAssets']['editorStyle'];
             add_action( 'init', function() use ($editorStyle)
             {
@@ -47,8 +47,7 @@ Class Optimize
             });
         }
 
-        if($this->themeOptions['adminAssets']['js'] || $this->themeOptions['adminAssets']['css'])
-        {
+        if($this->themeOptions['adminAssets']['js'] || $this->themeOptions['adminAssets']['css']) {
             add_action( 'admin_enqueue_scripts', array($this, 'loadAdminAssets') );
         }
     }
@@ -63,12 +62,12 @@ Class Optimize
 
     public function handleJavaScript()
     {
-        if($this->themeOptions['disableJquery']){
+        if($this->themeOptions['disableJquery']) {
             wp_dequeue_script('jquery');
             wp_deregister_script('jquery');
         }
 
-        if($this->themeOptions['addScriptJs']){
+        if($this->themeOptions['addScriptJs']) {
             $scriptLastModified = filemtime(get_template_directory() . '/assets/js/scripts.min.js');
             wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), $scriptLastModified, true );
         }
