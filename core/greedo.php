@@ -191,6 +191,15 @@ Class Greedo
         return $html;
     }
 
+    public static function wp_dump( $data )
+    {
+        add_action( 'admin_notices', function() use ($data){
+            echo '<div class="notice notice-success is-dismissible">';
+            self::var_dump($data);
+            echo '</div>';
+        } );
+    }
+
     public static function postLabels( $singular, $plural )
     {
         $lS = mb_strtolower( $singular );
