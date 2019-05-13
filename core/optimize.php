@@ -52,7 +52,8 @@ Class Optimize
         }
     }
 
-    public function loadAdminAssets(){
+    public function loadAdminAssets()
+    {
         wp_register_style( 'custom_wp_admin_css', $this->themeOptions['adminAssets']['css'], false, '1.0.0' );
         wp_enqueue_style( 'custom_wp_admin_css' );
 

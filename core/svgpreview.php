@@ -1,6 +1,7 @@
 <?php
 
-function common_svg_media_thumbnails($response, $attachment, $meta){
+function common_svg_media_thumbnails($response, $attachment, $meta)
+{
     if($response['type'] === 'image' && $response['subtype'] === 'svg+xml' && class_exists('SimpleXMLElement'))
     {
         try {
