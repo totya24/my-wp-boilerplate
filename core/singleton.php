@@ -2,7 +2,8 @@
 
 class Singleton
 {
-    public static function getInstance() {
+    public static function getInstance()
+    {
         static $instance = false;
         if( $instance === false ) {
             $instance = new static();

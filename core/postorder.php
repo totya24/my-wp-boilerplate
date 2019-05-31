@@ -11,7 +11,8 @@ Class postOrder
         add_filter( 'pre_get_posts', array($this, 'setDefaultOrder'), 5 );
     }
 
-    public function setDefaultOrder($wp_query){
+    public function setDefaultOrder($wp_query)
+    {
         global $pagenow;
 
         if (!in_array($wp_query->get( 'post_type' ), static::$types)) return;
