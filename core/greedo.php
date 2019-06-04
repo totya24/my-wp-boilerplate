@@ -218,7 +218,7 @@ Class Greedo
             'view_item'=> 'Megnéz',
             'search_items'=> 'Keresés',
             'not_found'=> 'Nincs ' . $lS,
-            'not_found_in_trash'=> 'Nincs törölt' . $lS,
+            'not_found_in_trash'=> 'Nincs törölt ' . $lS,
             'parent_item_colon'=> 'Szülő:',
             'menu_name'=> $uP,
         );
