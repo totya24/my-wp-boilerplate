@@ -7,6 +7,11 @@ if(isset($_GET['debug'])){
 
 $currentTheme = wp_get_theme();
 
+$currentLocale = get_locale();
+if(!is_admin()){
+    setlocale(LC_ALL, $currentLocale . '.utf8');
+}
+
 define('THEME_TEXTDOMAIN', $currentTheme->get('TextDomain'));
 
 $themeOptions = array(

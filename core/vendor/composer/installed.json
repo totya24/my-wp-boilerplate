@@ -778,5 +778,83 @@
             "minify",
             "twig"
         ]
+    },
+    {
+        "name": "horttcore/wp-customizer",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Horttcore/wp-customizer.git",
+            "reference": "8d6e0ce1e855756d49653b6fba0f5b8d1868b311"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Horttcore/wp-customizer/zipball/8d6e0ce1e855756d49653b6fba0f5b8d1868b311",
+            "reference": "8d6e0ce1e855756d49653b6fba0f5b8d1868b311",
+            "shasum": ""
+        },
+        "time": "2019-04-02T20:52:10+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Horttcore\\Customizer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ralf Hortt",
+                "email": "me@horttcore.de"
+            }
+        ],
+        "description": "A helper package for working with the WordPress Customizer"
+    },
+    {
+        "name": "teraone/twig-strftime-extension",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/teraone/twig-strftime-extension.git",
+            "reference": "f646a435ecddd52fefc157f59feeb0cb41b18a1a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/teraone/twig-strftime-extension/zipball/f646a435ecddd52fefc157f59feeb0cb41b18a1a",
+            "reference": "f646a435ecddd52fefc157f59feeb0cb41b18a1a",
+            "shasum": ""
+        },
+        "require": {
+            "twig/twig": "1.*|~2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.7"
+        },
+        "time": "2018-08-14T10:15:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Teraone\\Twig": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stefan Gotre",
+                "email": "gotre@teraone.de",
+                "homepage": "https://teraone.de",
+                "role": "Developer"
+            }
+        ],
+        "description": "use strftime function in  twig"
     }
 ]

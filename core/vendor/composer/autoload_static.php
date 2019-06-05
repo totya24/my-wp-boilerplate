@@ -40,6 +40,10 @@ class ComposerStaticInit53330406ee3c719a6f7ea36f822e3a02
             'MatthiasMullie\\PathConverter\\' => 29,
             'MatthiasMullie\\Minify\\' => 22,
         ),
+        'H' => 
+        array (
+            'Horttcore\\Customizer\\' => 21,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -79,6 +83,10 @@ class ComposerStaticInit53330406ee3c719a6f7ea36f822e3a02
         array (
             0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
         ),
+        'Horttcore\\Customizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/horttcore/wp-customizer/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -94,6 +102,10 @@ class ComposerStaticInit53330406ee3c719a6f7ea36f822e3a02
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+            'Teraone\\Twig' => 
+            array (
+                0 => __DIR__ . '/..' . '/teraone/twig-strftime-extension/lib',
             ),
         ),
         'J' => 

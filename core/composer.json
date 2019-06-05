@@ -1,6 +1,8 @@
 {
     "require": {
         "twig/twig": "^2.9",
-        "nochso/html-compress-twig": "^2.0"
+        "nochso/html-compress-twig": "^2.0",
+        "horttcore/wp-customizer": "^2.0",
+        "teraone/twig-strftime-extension": "^1.2"
     }
 }

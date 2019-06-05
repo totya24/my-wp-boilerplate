@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'YUI' => array($vendorDir . '/jalle19/php-yui-compressor/lib'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Teraone\\Twig' => array($vendorDir . '/teraone/twig-strftime-extension/lib'),
     'JShrink' => array($vendorDir . '/tedivm/jshrink/src'),
 );

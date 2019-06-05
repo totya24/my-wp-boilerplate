@@ -15,4 +15,5 @@ return array(
     'Patchwork\\' => array($vendorDir . '/patchwork/jsqueeze/src'),
     'MatthiasMullie\\PathConverter\\' => array($vendorDir . '/matthiasmullie/path-converter/src'),
     'MatthiasMullie\\Minify\\' => array($vendorDir . '/matthiasmullie/minify/src'),
+    'Horttcore\\Customizer\\' => array($vendorDir . '/horttcore/wp-customizer/src'),
 );
