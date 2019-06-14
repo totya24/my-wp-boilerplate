@@ -59,8 +59,8 @@ Class postOrder
     {
         $orderBy = get_query_var('orderby');
         if (!isset($orderBy) || (is_string($orderBy) && 0 === strpos($orderBy, 'menu_order')) || (isset($orderBy['menu_order']) && $orderBy['menu_order'] == 'ASC')) {
-            wp_enqueue_script('postorder', get_template_directory_uri() . '/core/postOrder/postorder.js', array('jquery-ui-sortable'), '2.1', true);
-            wp_enqueue_style('postorder', get_template_directory_uri() . '/core/postOrder/postorder.css');
+            wp_enqueue_script('postorder', get_template_directory_uri() . '/core/postorder/postorder.js', array('jquery-ui-sortable'), '2.1', true);
+            wp_enqueue_style('postorder', get_template_directory_uri() . '/core/postorder/postorder.css');
         }
 
     }
