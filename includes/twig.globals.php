@@ -6,28 +6,37 @@ Class TwigGlobals extends Singleton
     {
         if(!is_admin()){
             add_filter('twig_site_variables', array($this, 'addTwigGlobals'));
+            add_filter('twig_post_template_vars', array($this, 'addTwigGlobals'));
         }
     }
     
     public function addTwigGlobals( $globals )
     {
+        $isAjax = wp_doing_ajax();
+
         $themeDirectory = get_template_directory();
         
         $themeData = wp_get_theme();
         
         $privacyPolicyPageId = get_option( 'wp_page_for_privacy_policy' );
         
-        ob_start();
-        wp_head();
-        $theHeader = ob_get_clean();
+        $theHeader = '';
+        $theFooter = '';
+        $languageAttributes = '';
         
-        ob_start();
-        wp_footer();
-        $theFooter = ob_get_clean();
-        
-        ob_start();
-        language_attributes();
-        $languageAttributes = ob_get_clean();
+        if(!$isAjax){
+            ob_start();
+            wp_head();
+            $theHeader = ob_get_clean();
+            
+            ob_start();
+            wp_footer();
+            $theFooter = ob_get_clean();
+            
+            ob_start();
+            language_attributes();
+            $languageAttributes = ob_get_clean();
+        }
         
         $themeSettings = get_option('theme_settings');
         
