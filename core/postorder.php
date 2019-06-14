@@ -19,7 +19,7 @@ Class postOrder
         
         if ( is_admin() && 'edit.php' == $pagenow && !isset($_GET['orderby'])) {
             $wp_query->set( 'orderby', 'menu_order' );
-            $wp_query->set( 'order', 'ASC' );       
+            $wp_query->set( 'order', 'ASC' );
         }
     }
 
@@ -39,7 +39,7 @@ Class postOrder
         if (!in_array($postType, static::$types)) return;
 
         # is post type sortable?
-        $sortable = (post_type_supports($postType, 'page-attributes') || is_post_type_hierarchical($postType));        // check permission
+        $sortable = (post_type_supports($postType, 'page-attributes') || is_post_type_hierarchical($postType));
 
         if (!$sortable = apply_filters('simple_page_ordering_is_sortable', $sortable, $postType)) {
             return;
@@ -237,7 +237,6 @@ Class postOrder
         $returnData->new_pos = $newPos;
 
         wp_send_json($returnData);
-        die();
     }
 
     public function sortByOrderLink($views)
