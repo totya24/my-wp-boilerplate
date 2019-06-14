@@ -17,12 +17,6 @@ Class Optimize
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-        
-        # Allow upload svg files
-        add_filter('upload_mimes', function ($mimes) {
-            $mimes['svg'] = 'image/svg+xml';
-            return $mimes;
-        });
 
         # Remove and add js
         if ( !is_admin() ) {
