@@ -11,4 +11,7 @@
 ## TODO:
 * hide default dashboard widgets
 * validator
-* some improvements
+* validator osztály
+* paginator
+* követőkódok támogatása
+* admin twig shortcode renderelés bug
