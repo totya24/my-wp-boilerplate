@@ -12,9 +12,11 @@ Class MenuHandler extends Singleton
         );
     }
 
-    public static function getMenuItems( $menuId = 'main' )
+    public static function getMenuItems( $location = 'main' )
     {
-        $items   = wp_get_nav_menu_items($menuId);
+        $locations = get_nav_menu_locations();
+        $object = wp_get_nav_menu_object( $locations[$location] );
+        $items   = wp_get_nav_menu_items($object->name);
         $result  = array();
         $parents = array();
 
