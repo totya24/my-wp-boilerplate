@@ -191,6 +191,11 @@ Class Greedo
         return $html;
     }
 
+    public static function mb_ucfirst($string)
+    {
+        return mb_strtoupper(mb_substr($string, 0, 1)).mb_strtolower(mb_substr($string, 1));
+    }
+
     public static function wp_dump( $data )
     {
         add_action( 'admin_notices', function() use ($data){
@@ -203,9 +208,9 @@ Class Greedo
     public static function postLabels( $singular, $plural )
     {
         $lS = mb_strtolower( $singular );
-        $uS = ucfirst( $lS );
+        $uS = self::mb_ucfirst( $lS );
         $lP = mb_strtolower( $plural );
-        $uP = ucfirst( $lP );
+        $uP = self::mb_ucfirst( $lP );
 		
         $labels = array(
             'name'=> $uP,
