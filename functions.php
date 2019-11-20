@@ -14,6 +14,8 @@ if(!is_admin()){
 
 define('THEME_TEXTDOMAIN', $currentTheme->get('TextDomain'));
 
+load_theme_textdomain( 'THEME_TEXTDOMAIN', get_template_directory().'/languages' );
+
 $themeOptions = array(
     'textdomain' => THEME_TEXTDOMAIN,
     'usePiklist' => true,

@@ -41,6 +41,20 @@ class WpTwig
 
         self::$twigEnvironment->addExtension(new \nochso\HtmlCompressTwig\Extension());
 		self::$twigEnvironment->addExtension(new Teraone\Twig\Extension\StrftimeExtension());
+		
+		// TODO: add custom filters with an external class/file
+		$translationFilter = new Twig_SimpleFilter('translate', function ($string) {
+            return __($string, THEME_TEXTDOMAIN);
+        });
+        self::$twigEnvironment->addFilter($translationFilter); 
+
+        $callStatic = new Twig_SimpleFunction("callStatic", function($class, $function, $args = array()){
+            if (class_exists($class) && method_exists($class, $function))
+                return call_user_func_array(array($class, $function), $args);
+            return null;
+        });
+
+        self::$twigEnvironment->addFunction($callStatic);
     }
     
     private function setupTwigEnvironmentOptions()
