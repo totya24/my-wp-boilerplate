@@ -83,7 +83,9 @@ class WpTwig
     
     public function renderTemplate($template, $values)
     {
-        $values = apply_filters('twig_post_template_vars', $values);
+        if(wp_doing_ajax()){
+            $values = apply_filters('twig_post_template_vars', $values);
+        }
         return self::$twigEnvironment->render($template, $values);
     }
 }
