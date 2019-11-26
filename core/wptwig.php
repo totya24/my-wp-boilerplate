@@ -76,16 +76,16 @@ class WpTwig
     {
         self::$globalVariables = apply_filters('twig_site_variables', self::$globalVariables);
         
-        foreach(self::$globalVariables as $name => $value) {
-            self::$twigEnvironment->addGlobal($name, $value);
-        }
+		if(is_array(self::$globalVariables)){
+			foreach(self::$globalVariables as $name => $value) {
+				self::$twigEnvironment->addGlobal($name, $value);
+			}
+		}
     }
     
     public function renderTemplate($template, $values)
     {
-        if(wp_doing_ajax()){
-            $values = apply_filters('twig_post_template_vars', $values);
-        }
+        $values = apply_filters('twig_post_template_vars', $values);
         return self::$twigEnvironment->render($template, $values);
     }
 }

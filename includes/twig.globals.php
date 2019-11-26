@@ -5,7 +5,6 @@ Class TwigGlobals extends Singleton
     public function __construct()
     {
         if(!is_admin()){
-            add_filter('twig_site_variables', array($this, 'addTwigGlobals'));
             add_filter('twig_post_template_vars', array($this, 'addTwigGlobals'));
         }
     }
