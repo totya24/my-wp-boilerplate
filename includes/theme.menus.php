@@ -19,6 +19,7 @@ Class MenuHandler extends Singleton
         $items   = wp_get_nav_menu_items($object->name);
         $result  = array();
         $parents = array();
+		$active = null;
 
         if(!empty($items)){
             _wp_menu_item_classes_by_context($items);
@@ -66,7 +67,8 @@ Class MenuHandler extends Singleton
                 }
             }
         }
-        return $result;
+
+        return apply_filters( 'menu_items', $result, $location, $active ); 
     }
 }
 
