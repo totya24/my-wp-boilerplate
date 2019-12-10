@@ -260,4 +260,31 @@ Class Greedo
         return $labels;
     }
 
+    public static function wp_notice($content = '', $type = 'success', $is_dismissible = true)
+    {
+        add_action('admin_notices', function() use ($content, $type, $is_dismissible){
+            echo '<div class="notice notice-'.$type.' '.($is_dismissible ? 'is-dismissible' : '').'"><p>'.$content.'</p></div>';
+        });
+    }
+
+    public static function wp_success($content, $is_dismissible = true)
+    {
+        self::wp_notice($content, 'success', $is_dismissible);
+    }
+
+    public static function wp_warning($content, $is_dismissible = true)
+    {
+        self::wp_notice($content, 'warning', $is_dismissible);
+    }
+
+    public static function wp_info($content, $is_dismissible = true)
+    {
+        self::wp_notice($content, 'info', $is_dismissible);
+    }
+
+    public static function wp_error($content, $is_dismissible = true)
+    {
+        self::wp_notice($content, 'error', $is_dismissible);
+    }
+
 }
