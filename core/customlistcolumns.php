@@ -9,20 +9,20 @@ class CustomAdminListColumn
     public $name;
 
     
-    public function __construct( $name = 'post', $args = array() )
+    public function __construct( $name = 'post', $args = array(), $type = 'post' )
     {
         $this->name = $name;
         $this->columns = $args;
 
         if(empty($args)) return;
 
-        if(post_type_exists( $name )){
+        if($type == 'post'){
             $this->type = 'post';
             add_filter('manage_'. $this->name .'_posts_columns', array($this, 'handleColumnHeaders'));
             add_action('manage_'. $this->name .'_posts_custom_column', array($this, 'handlePostColumnContents'), 10, 2);
         }
 
-        if(taxonomy_exists( $name )){
+        if($type == 'tax'){
             $this->type = 'tax';
             add_filter('manage_edit-'. $this->name .'_columns', array($this, 'handleColumnHeaders') );
             add_filter('manage_'. $this->name .'_custom_column', array($this, 'handleTaxColumnContents'), 10, 3);
