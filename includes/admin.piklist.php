@@ -32,7 +32,7 @@ Class PiklistMods extends Singleton
 
     function showAdminWarning()
     {
-        $message = __('A sablon megfelelő működéséhez szükség van a <a href="https://piklist.com/" target="_blank">Piklist</a> bővítményre!', THEME_SLUG);
+        $message = __('A sablon megfelelő működéséhez szükség van a <a href="https://piklist.com/" target="_blank">Piklist</a> bővítményre!', THEME_TEXTDOMAIN);
         printf( '<div class="notice notice-error"><p>%1$s</p></div>', $message ); 
     }
     

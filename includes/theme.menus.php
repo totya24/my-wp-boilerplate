@@ -13,7 +13,6 @@ Class MenuHandler extends Singleton
     }
 
     public static function getMenuItems( $location = 'main' )
-    public static function getMenuItems( $location = 'main' )
     {
         global $wp_query;
         $locations = get_nav_menu_locations();
